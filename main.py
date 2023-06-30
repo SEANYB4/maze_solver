@@ -14,7 +14,9 @@ def main():
     maze = Maze(20, 20, 10, 10, 30, 30, win)
     maze.create_cells()
     maze.break_walls_r(0, 0)
+    maze.reset_cells_visited()
     maze.break_entrance_and_exit()
+
 
 
     # redraw the canvas in a loop

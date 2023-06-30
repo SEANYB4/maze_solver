@@ -48,37 +48,18 @@ class Maze:
     def break_walls_r(self, i, j):
         cell = self.cells[i][j]
         cell.visited = True
-        left_cell = None
-        right_cell = None
-        above_cell = None
-        bottom_cell = None
-        try:
-            left_cell = self.cells[i-1][j]
-        except:
-            pass
-        try:
-            right_cell = self.cells[i+1][j]
-        except:
-            pass
-        try:
-            above_cell = self.cells[i][j-1]
-        except:
-            pass
-        try:
-            bottom_cell = self.cells[i][j+1]
-        except:
-            pass
+        
         
         while True:
             coords = []
             
-            if (left_cell is not None) and (left_cell.visited == False):
+            if (i>0) and (self.cells[i-1][j].visited == False):
                 coords.append((i-1, j, 'left'))
-            if (right_cell is not None) and (right_cell.visited == False):
+            if (i<(self.num_cols)) and (self.cells[i+1][j].visited == False):
                 coords.append((i+1, j, 'right'))
-            if (above_cell is not None) and (above_cell.visited == False):
+            if (j > 0) and (self.cells[i][j-1].visited == False):
                 coords.append((i, j-1, 'above'))
-            if (bottom_cell is not None) and (bottom_cell.visited == False):
+            if (j < (self.num_rows)) and (self.cells[i][j+1].visited == False):
                 coords.append((i, j+1, 'below'))
 
             if len(coords) == 0:
@@ -106,3 +87,21 @@ class Maze:
                     cell_2.has_top_wall = False
 
                 self.break_walls_r(coords[index][0], coords[index][1])
+
+    def reset_cells_visited(self):
+        for i in range(0, self.num_cols):
+            for j in range(0, self.num_rows):
+                self.cells[i][j].visited = False
+
+    
+
+    def solve(self):
+        self.solve_r(i, j)
+
+
+    def solve_r(self, i, j):
+        self.animate()
+        cell = self.cells[i][j]
+        cell.visited = True
+
+        
