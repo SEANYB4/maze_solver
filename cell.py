@@ -60,7 +60,7 @@ class Cell:
         if undo == True:
             color = 'gray'
         else:
-            color = 'red'
+            color = 'blue'
 
         move.draw(self.canvas, color)
 
