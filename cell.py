@@ -3,10 +3,10 @@ class Cell:
     def __init__(self, win, point_1, point_2):
 
         self.__win = win
-        self.__x1 = point_1.x
-        self.__y1 = point_1.y
-        self.__x2 = point_2.x
-        self.__y2 = point_2.y
+        self.__x1 = None
+        self.__y1 = None
+        self.__x2 = None
+        self.__y2 = None
         has_left_wall = True
         has_right_wall = True
         has_top_wall = True
@@ -15,4 +15,3 @@ class Cell:
 
     def draw(self):
 
-        
