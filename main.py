@@ -2,6 +2,8 @@ from tkinter import Tk, BOTH, Canvas
 from line import Line
 from point import Point
 from cell import Cell
+from maze import Maze
+
 class Window:
 
     def __init__(self, width, height):
@@ -33,22 +35,11 @@ def main():
     # Define window
     win = Window(800, 600)
 
-    #Draw a cell
-    point_1 = Point(20, 40)
-    point_2 = Point(60, 80)
-    cell_1 = Cell(win)
-    cell_1.draw(point_1, point_2)
+   
+    # Creat maze
 
-    #Draw another cell
-    point_3 = Point(200, 300)
-    point_4 = Point(240, 340)
-    cell_2 = Cell(win)
-    cell_2.draw(point_3, point_4)
-
-
-    # draw move between cells
-    cell_1.draw_move(cell_2)
-
+    maze = Maze(10, 10, 10, 10, 20, 20, win)
+    maze.create_cells()
 
     # redraw the canvas in a loop
     win.wait_for_close()
