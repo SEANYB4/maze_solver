@@ -18,7 +18,6 @@ def main():
     maze.break_entrance_and_exit()
     maze.solve()
 
-
     # redraw the canvas in a loop
     win.wait_for_close()
 
