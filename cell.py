@@ -4,7 +4,7 @@ from point import Point
 
 class Cell:
 
-    def __init__(self, win):
+    def __init__(self, win=None):
 
         self.win = win
         self.canvas = win.canvas
@@ -16,6 +16,7 @@ class Cell:
         self.has_right_wall = True
         self.has_top_wall = True
         self.has_bottom_wall = True
+        self.visited = False
 
 
     def draw(self, point_1, point_2):
