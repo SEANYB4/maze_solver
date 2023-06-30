@@ -36,8 +36,7 @@ def main():
     win = Window(800, 600)
 
    
-    # Creat maze
-
+    # Create maze
     maze = Maze(10, 10, 10, 10, 20, 20, win)
     maze.create_cells()
 
