@@ -44,3 +44,22 @@ class Cell:
             right_wall.draw(self.canvas, 'red')
 
 
+
+    def draw_move(self, to_cell, undo=False):
+
+        start_x = self.x2 - ((self.x2 - self.x1)/2)
+        start_y = self.y2 - ((self.y2 - self.y1)/2)
+        point_1 = Point(start_x, start_y)
+
+        end_x = to_cell.x2 - ((to_cell.x2 - to_cell.x1)/2)
+        end_y = to_cell.y2 - ((to_cell.y2 - to_cell.y1)/2)
+        point_2 = Point(end_x, end_y)
+
+        move = Line(point_1, point_2)
+        if undo == True:
+            color = 'gray'
+        else:
+            color = 'red'
+
+        move.draw(self.canvas, color)
+

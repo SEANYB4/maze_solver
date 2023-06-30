@@ -30,12 +30,27 @@ class Window:
 
 
 def main():
+    # Define window
     win = Window(800, 600)
+
+    #Draw a cell
     point_1 = Point(20, 40)
     point_2 = Point(60, 80)
-    cell = Cell(win)
-    cell.draw(point_1, point_2)
+    cell_1 = Cell(win)
+    cell_1.draw(point_1, point_2)
 
+    #Draw another cell
+    point_3 = Point(200, 300)
+    point_4 = Point(240, 340)
+    cell_2 = Cell(win)
+    cell_2.draw(point_3, point_4)
+
+
+    # draw move between cells
+    cell_1.draw_move(cell_2)
+
+
+    # redraw the canvas in a loop
     win.wait_for_close()
 
 
